@@ -3,15 +3,36 @@
 
 <h2>Criação de Senha</h2>
 
-<form action="/action_page.php">
+<form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST">
   <label for="fname">Digite seu Usuário:</label><br>
-  <input type="text" id="fname" name="fname" placeholder="Usuário"><br>
+  <input type="text" id="fusr" name="fusr" placeholder="Usuário"><br>
   <label for="fname">Digite uma senha de no mínimo 6 caracteres:</label><br>
-  <input type="text" id="fname" name="fname" placeholder="Senha"><br>
+  <input type="password" id="fpass" name="fpass" placeholder="Senha"><br>
   <label for="lname">Digite ela novamente:</label><br>
-  <input type="text" id="lname" name="lname" placeholder="Confirmação"><br><br>
+  <input type="password" id="fpass2" name="fpass2" placeholder="Confirmação"><br><br>
   <input type="submit" value="Enviar">
 </form> 
+<script>  
+      function validation()  
+      {  
+          var id=document.f1.fpass.value;  
+          var ps=document.f1.fpass2.value;  
+          var ps2=document.f1.fpass2.value; 
+          if(id.length=="") {  
+              alert("Nome de Usuário vazio!");  
+              return false;  
+           }   
+           if (ps.length=="") {  
+              alert("Senha está vazio!");  
+              return false;  
+           } 
+           if (ps2.length=="") {  
+              alert("Confirmação de senha está vazio!");  
+              return false;  
+           }
+          }                             
+      }  
+  </script>  
 
 <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
 
